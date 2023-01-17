@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 //components
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
+import Dashboard from './components/Dashboard/Dashboard';
+
 //firebase
 import PrivateRoute from './firebase/PrivateRoute';
 import {AuthProvider} from './firebase/auth'
@@ -16,6 +18,13 @@ function App() {
 			<Routes>
 				<Route path="/login" element={<Login />} />
 				<Route path="/register" element={<Register />} />
+				<Route 
+					path="/dashboard" 
+					element={
+						<PrivateRoute>
+							<Dashboard />
+						</PrivateRoute>
+					} />
 			</Routes>
 			</div>
 		</Router>

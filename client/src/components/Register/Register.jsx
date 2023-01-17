@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import firebaseApp from '../../firebase/firebase';
 import { Link} from 'react-router-dom';
-import './Register.css';
 
 function Register() {
     const navigate = useNavigate();
@@ -50,7 +49,7 @@ function Register() {
                 <br></br>
                 <input name='password' type="password" className="input-field" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <br></br>
-                <button className="login-button">Login</button>
+                <button className="login-button">Register</button>
             </div>
         </div>
       </div>

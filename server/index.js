@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
@@ -6,6 +8,8 @@ const cors = require('cors');
 const userRoute = require("./routes/user.route");
 const orderRoute = require("./routes/order.route");
 const cartRoute = require("./routes/cart.route");
+const productRoute = require("./routes/product.route");
+const paymentRoute = require("./routes/payment.route");
 
 const app = express();
 
@@ -23,5 +27,7 @@ useNewUrlParser: true});
 app.use("/api/users", userRoute);
 app.use("/api/order", orderRoute);
 app.use("/api/cart", cartRoute);
+app.use("/api/product", productRoute);
+app.use("/api/payment", paymentRoute);
 
 app.listen(3001, () => {console.log("Server running on port 3001")});
